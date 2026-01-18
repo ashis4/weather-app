@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: url("https://images.pexels.com/photos/1809644/pexels-photo-1809644.jpeg?cs=srgb&dl=pexels-cmonphotography-1809644.jpg&fm=jpg")
+        no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app {
+    width: 360px;
+    padding: 30px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    text-align: center;
+    color: white;
+    animation: floatIn 1s ease;
+}
+
+@keyframes floatIn {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.app h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 12px 0 0 12px;
+    outline: none;
+}
+
+.search-box button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 0 12px 12px 0;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.search-box button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 25px rgba(0, 114, 255, 0.6);
+}
+
+.weather-card h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.weather-card h1 {
+    font-size: 56px;
+    margin: 10px 0;
+    color: #00e5ff;
+}
+
+.weather-card p {
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.details p {
+    width: 48%;
+    padding: 14px;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.35);
+    transition: 0.3s ease;
+}
+
+.details p span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.details p:hover {
+    transform: translateY(-6px);
+    background: rgba(0, 0, 0, 0.55);
+}

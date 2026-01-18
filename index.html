@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Weather India</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+    <h1> Live Weather </h1>
+
+    <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Enter city name" list="cityList">
+        <datalist id="cityList"></datalist>
+        <button onclick="getWeather()">Search</button>
+    </div>
+
+    <div class="weather-card">
+        <h2 id="cityName">City</h2>
+        <h1 id="temperature">--°C</h1>
+        <p id="description">Weather condition</p>
+
+        <div class="details">
+            <p>💧 Humidity<br><span id="humidity">--</span>%</p>
+            <p>💨 Wind<br><span id="wind">--</span> km/h</p>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
