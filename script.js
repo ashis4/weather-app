@@ -1,6 +1,5 @@
 const apiKey = "01d37be6607a48ce837131819261701";
 
-// ================= WEATHER =================
 
 function getWeather() {
     const city = document.getElementById("cityInput").value.trim();
@@ -33,8 +32,6 @@ function getWeather() {
         });
 }
 
-// ================= SMART INDIAN CITY AUTOCOMPLETE =================
-
 const cityInput = document.getElementById("cityInput");
 const cityList = document.getElementById("cityList");
 
@@ -50,24 +47,19 @@ cityInput.addEventListener("input", function () {
 
             const results = data._embedded["city:search-results"];
 
-            // 1. Keep only Indian cities
             let indianCities = results.filter(city =>
                 city.matching_full_name.includes("India")
             );
 
-            // 2. Prefer exact city match (Thane over Thanesar)
             let exactMatches = indianCities.filter(city =>
                 city.matching_full_name
                     .toLowerCase()
                     .startsWith(query.toLowerCase() + ",")
             );
-
-            // 3. Prefer Maharashtra cities if available
             let maharashtraCities = indianCities.filter(city =>
                 city.matching_full_name.includes("Maharashtra")
             );
 
-            // Final priority order
             let finalCities = exactMatches.length > 0
                 ? exactMatches
                 : maharashtraCities.length > 0
@@ -83,3 +75,4 @@ cityInput.addEventListener("input", function () {
             });
         });
 });
+
